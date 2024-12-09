@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #shopping-list {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 10px;
+        }
+        .purchased {
+            text-decoration: line-through; /* Strikethrough for purchased items */
+            background-color: #d3ffd3; /* Light green background for purchased items */
+        }
+        button {
+            margin-top: 10px;
+        }
+        .item-image {
+            width: 50px; /* Set a width for item images */
+            cursor: pointer; /* Change cursor to pointer on hover */
+            margin-right: 10px; /* Space between images */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Shopping List</h1>
+    
+    <!-- Input field for adding new items -->
+    <input type="text" id="item-input" placeholder="Add a new item" />
+    
+    <!-- Button to add items -->
+    <button id="add-button">Add</button>
+    
+    <!-- Button to mark all items as purchased -->
+    <button id="mark-purchased-button">Mark Purchased</button>
+    
+    <!-- Button to clear the list -->
+    <button id="clear-button">Clear List</button>
+
+    <!-- Images for selecting items -->
+    <div id="item-selection">
+        <h2>Select Items:</h2>
+        <img src="images/apple.jpeg" alt="Apple" class="item-image" data-item-name="Apple">
+        <img src="images/banana.jpeg" alt="Banana" class="item-image" data-item-name="Banana">
+        <img src="images/carrot.jpeg" alt="Carrot" class="item-image" data-item-name="Carrot">
+        <img src="images/corriander.jpeg" alt="corriander" class="item-image" data-item-name="corriander">
+        <img src="images/grapes.jpeg" alt="Grapes" class="item-image" data-item-name="Grapes">
+        <img src="images/guava.jpeg" alt="Guava" class="item-image" data-item-name="Guava">
+        <img src="images/mangoes.jpeg" alt="Mangoes" class="item-image" data-item-name="Mangoes">
+        <img  src="images/onions.jpeg" alt="onions" class="item-image" data-item-name="onions">
+        <img  src="images/orange.jpeg"  alt="orange" class="item-image" data-item-name="orange">
+        <img  src="images/pamkin.jpeg" alt="pamkin" class="item-image" data-item-name="pamkin">
+        <img  src="images/papaya.jpeg" alt="Papaya" class="item-image" data-item-name="Papaya">
+        <img  src="images/pineaple.jpeg" alt="pineaple" class="item-image" data-item-name="pineaple">
+        <img src="images/strawberry.jpeg"  alt="strawberry" class="item-image" data-item-name="strawberry">
+        <img src="images/sukumawiki.jpeg"  alt="sukumawiki" class="item-image" data-item-name="sukumawiki">
+        <img  src="images/tomato.jpeg" alt="Tomato" class="item-image" data-item-name="Tomato">
+        <img src="images/watermelon.jpeg" alt="watermelon" class="item-image" data-item-name="watermelon">
+
+        <!-- Add more images as needed -->
+    </div>
+
+    <!-- List container to display items -->
+    <ul id="shopping-list"></ul>
+
+    <!-- Link to JavaScript file -->
+    <script src="script.js"></script>
+
+</body>
+</html>
