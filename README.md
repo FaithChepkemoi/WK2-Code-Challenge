@@ -20,6 +20,7 @@ The Shopping List Application is a simple web-based tool that allows users to ma
    git clone git@github.com:FaithChepkemoi/WK2-Code-Challenge.git
 
 2. **Navigate to the Project Directory**:
+   ```bash
    cd WK2-Code-Challenge
 
 3. **Open index.html in your web browser**:
