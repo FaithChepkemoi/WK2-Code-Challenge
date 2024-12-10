@@ -9,7 +9,6 @@ const selectedItemsList = document.getElementById('selected-items-list'); // Ref
 
 // Initialize shopping list and selected items array
 let items = [];
-let selectedItems = [];
 
 // Load items from local storage
 function loadItems() {
@@ -96,15 +95,50 @@ function editItem(index) {
     }
 }
 
+// Mark an individual item as purchased or unpurchased
+function markPurchased(index) {
+   items[index].purchased = !items[index].purchased; // Toggle purchased state
+   renderList(); // Re-render the list to reflect changes visually
+   saveItems(); // Save to local storage
+}
+
 // Save items to local storage 
 function saveItems() {
    localStorage.setItem('shoppingList', JSON.stringify(items));
 }
 
+// Function to add item from image selection with default quantity of 1
+function addItemFromImage(itemName) {
+    const existingItemIndex = items.findIndex(item => item.name === itemName);
+    
+    if (existingItemIndex === -1) {
+        const quantity = parseInt(quantityInput.value) || 1; // Use quantity input value or default to 1
+        items.push({ name: itemName, quantity, purchased: false });
+        
+        renderList(); // Update the list display
+        saveItems(); // Save to local storage
+    } else {
+        alert(`${itemName} is already in the list.`);
+    }
+}
+
+// Function to remove item from image selection
+function removeItemFromImage(itemName) {
+    const indexToRemove = items.findIndex(item => item.name === itemName);
+    
+    if (indexToRemove !== -1) {
+        items.splice(indexToRemove, 1); // Remove the item from the array
+        renderList(); // Update the display after removal
+        saveItems(); // Save changes to local storage
+    } else {
+        alert(`${itemName} is not in the list.`);
+    }
+}
+
 // Event listeners 
 addButton.addEventListener('click', addItem);
-markPurchasedButton.addEventListener('click', markAllPurchased); // Ensure this works correctly
-clearButton.addEventListener('click', clearList); // Ensure this works correctly
+markPurchasedButton.addEventListener('click', markAllPurchased); 
+clearButton.addEventListener('click', clearList); 
 
 // Load initial items from local storage when the page loads 
 loadItems();
