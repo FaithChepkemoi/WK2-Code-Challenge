@@ -1,0 +1,103 @@
+/* styles.css */
+#nav-title {
+    background-color: green;
+    padding: 100px, 100px;
+    color: white;
+    text-align:center ;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 20px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+background-color: cornflowerblue;
+    
+}
+h1 {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* Text color */
+    padding: 20px; /* Space inside the h1 */
+    text-align: center; /* Center the text */
+   /* border-radius:0px; */ /* Rounded corners */
+    margin: 0; /* Remove default margin */
+    width:100%; /*Making the heading cover full width*/
+}
+h2,h3{
+font-size: 24px; /* Increase font size */
+color: #333; /* Dark gray color */
+margin-top: 20px; /* Space above the heading */
+margin-bottom: 10px; /* Space below the heading */
+text-align: left; /* Align text to the left */
+border-bottom: 2px solid #ccc; /* Add a bottom border */
+padding-bottom: 5px; /* Add some padding below the text */
+}
+
+#shopping-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
+}
+.purchased {
+    text-decoration: line-through; /* Strikethrough for purchased items */
+    background-color: #d3ffd3; /* Light green background for purchased items */
+}
+button {
+    margin-top: 10px;
+}
+.item-image {
+    width: 50px; /* Set a width for item images */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    margin-right: 10px; /* Space between images */
+}
+.icon {
+    width: 20px; /* Set a width for icons */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    margin-left: 5px; /* Space between image and icon */
+}
+.item-selection {
+    display: flex; /* Use flexbox to arrange items in a column */
+    flex-direction: column; /* Arrange items vertically */
+    align-items: flex-start; /* Align items to the start of the container */
+    margin-top: 20px; /* Space above the item selection section */
+    border: 1px solid #ccc; /* Border around the selection area */
+    padding: 10px; /* Padding inside the selection area */
+    border-radius: 8px; /* Rounded corners */
+    background-color: #f9f9f9; /* Light background color */
+}
+.item-container {
+    display: flex; /* Use flexbox for each item container */
+    align-items: center; /* Center items vertically */
+    margin-bottom: 10px; /* Space between item containers */
+}
+
+footer {
+    text-align: center; /* Center the text */
+    margin-top: 20px; /* Space above the footer */
+    padding: 10px; /* Padding inside the footer */
+    background-color: #f1f1f1; /* Light gray background */
+    border-top: 1px solid #ccc; /* Top border */
+}
+
+.copyright {
+    font-size: 14px; /* Font size for copyright text */
+    color: #333; /* Dark gray color */
+}
+
+.edit-button {
+margin-left: 10px; /* Space between item text and button */
+background-color: #3498db; /* Background color */
+color: white; /* Text color */
+border: none; /* Remove default border */
+padding: 5px 10px; /* Padding inside button */
+border-radius: 5px; /* Rounded corners */
+cursor: pointer; /* Pointer cursor on hover */
+}
+
+.edit-button:hover {
+background-color: #2980b9; /* Darker blue on hover */
+}
