@@ -31,8 +31,10 @@ Specify the quantity using the quantity input field.
 Click the "Add" button to add the item to your shopping list.
 
 **Marking Items as Purchased**:
-Click on an item in the list to mark it as purchased. The item's appearance will change.
-Editing Items:
+Click on an item in the list or click purchase button to mark it as purchased. The item's appearance will change.
+
+**Editing Items**:
 Click the "Edit" button next to an item to change its name or quantity.
-Clearing the List:
+
+**Clearing the List**:
 Click the "Clear List" button to remove all items from your shopping list.
