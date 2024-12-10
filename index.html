@@ -8,7 +8,25 @@
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
+        background-color: cornflowerblue;
+            
         }
+        h1 {
+            background-color: #4CAF50; /* Green background */
+            color: white; /* Text color */
+            padding: 20px; /* Space inside the h1 */
+            text-align: center; /* Center the text */
+            border-radius:10px; /* Rounded corners */
+        }
+        h2 {
+        font-size: 24px; /* Increase font size */
+        color: #333; /* Dark gray color */
+        margin-top: 20px; /* Space above the heading */
+        margin-bottom: 10px; /* Space below the heading */
+        text-align: left; /* Align text to the left */
+        border-bottom: 2px solid #ccc; /* Add a bottom border */
+        padding-bottom: 5px; /* Add some padding below the text */
+    }
         #shopping-list {
             list-style-type: none;
             padding: 0;
@@ -25,6 +43,11 @@
             width: 50px; /* Set a width for item images */
             cursor: pointer; /* Change cursor to pointer on hover */
             margin-right: 10px; /* Space between images */
+        }
+        .icon {
+            width: 20px; /* Set a width for icons */
+            cursor: pointer; /* Change cursor to pointer on hover */
+            margin-left: 5px; /* Space between image and icon */
         }
     </style>
 </head>
@@ -47,24 +70,68 @@
     <!-- Images for selecting items -->
     <div id="item-selection">
         <h2>Select Items:</h2>
-        <img src="images/apple.jpeg" alt="Apple" class="item-image" data-item-name="Apple">
-        <img src="images/banana.jpeg" alt="Banana" class="item-image" data-item-name="Banana">
-        <img src="images/carrot.jpeg" alt="Carrot" class="item-image" data-item-name="Carrot">
-        <img src="images/corriander.jpeg" alt="corriander" class="item-image" data-item-name="corriander">
-        <img src="images/grapes.jpeg" alt="Grapes" class="item-image" data-item-name="Grapes">
-        <img src="images/guava.jpeg" alt="Guava" class="item-image" data-item-name="Guava">
-        <img src="images/mangoes.jpeg" alt="Mangoes" class="item-image" data-item-name="Mangoes">
-        <img  src="images/onions.jpeg" alt="onions" class="item-image" data-item-name="onions">
-        <img  src="images/orange.jpeg"  alt="orange" class="item-image" data-item-name="orange">
-        <img  src="images/pamkin.jpeg" alt="pamkin" class="item-image" data-item-name="pamkin">
-        <img  src="images/papaya.jpeg" alt="Papaya" class="item-image" data-item-name="Papaya">
-        <img  src="images/pineaple.jpeg" alt="pineaple" class="item-image" data-item-name="pineaple">
-        <img src="images/strawberry.jpeg"  alt="strawberry" class="item-image" data-item-name="strawberry">
-        <img src="images/sukumawiki.jpeg"  alt="sukumawiki" class="item-image" data-item-name="sukumawiki">
-        <img  src="images/tomato.jpeg" alt="Tomato" class="item-image" data-item-name="Tomato">
-        <img src="images/watermelon.jpeg" alt="watermelon" class="item-image" data-item-name="watermelon">
+        <div style="display: inline-block;">
+            
+           
+            <img src="images/plus.png" alt="Add apple" class="icon" data-item-name="Apple" onclick="addItemFromImage('Apple')">
 
-        <!-- Add more images as needed -->
+        </div>
+        <div style="display: inline-block;">
+
+            
+            <img src="images/apple.jpeg" alt="Apple" class="item-image" data-item-name="Apple" >
+            <figcaption>Apple</figcaption>
+            </div>
+            <div style="display: inline-block;">
+            <img src="images/minus.png" alt="Remove Apple" class="icon" data-item-name="Apple" onclick="removeItemFromImage('Apple')">
+        
+        </div>
+        <br>
+        <br>
+        <br>
+
+        
+
+            <div style="display: inline-block;">
+            <img src="images/plus.png" alt="Add Banana" class="icon" data-item-name="Banana" onclick="addItemFromImage('Banana')">
+            </div>
+
+            <div style="display: inline-block;">
+                <img src="images/banana.jpeg" alt="Banana" class="item-image" data-item-name="Banana">
+                </div>
+
+            <div style="display: inline-block;">
+
+            <img src="images/minus.png" alt="Remove Banana" class="icon" data-item-name="Banana" onclick="removeItemFromImage('Banana')">
+        </div>
+        <br>
+        <br>
+        <br>
+
+            <div style="display: inline-block;">
+            <img src="images/plus.png" alt="Add Carrot" class="icon" data-item-name="Carrot" onclick="addItemFromImage('Carrot')">
+            </div>
+
+        <div style="display: inline-block;">
+            <img src="images/carrot.jpeg" alt="Carrot" class="item-image" data-item-name="Carrot">
+            </div>
+            <div style="display: inline-block;">
+            <img src="images/minus.png" alt="Remove Carrot" class="icon" data-item-name="Carrot" onclick="removeItemFromImage('Carrot')">
+        </div>
+        
+        <br>
+        <br>
+        <br>
+        <div style="display: inline-block;">
+            <img src="images/plus.png" alt="Add corriander" class="icon" data-item-name="corriander" onclick="addItemFromImage('corriander')">
+            </div>
+
+        <div style="display: inline-block;">
+            <img src="images/corriander.jpeg" alt="corriander" class="item-image" data-item-name="corriander">
+            </div>
+            <div style="display: inline-block;">
+            <img src="images/minus.png" alt="Remove corriander" class="icon" data-item-name="corriander" onclick="removeItemFromImage('corriander')">
+        </div>
     </div>
 
     <!-- List container to display items -->
