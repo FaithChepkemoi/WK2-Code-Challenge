@@ -1,6 +1,6 @@
 /* styles.css */
 #nav-title {
-    background-color: green;
+    background-color: rgb(0, 70, 128);
     padding: 100px, 100px;
     color: white;
     text-align:center ;
@@ -17,16 +17,29 @@ body {
     margin: 20px;
 background-color: cornflowerblue;
     
-}
-h1 {
+} 
+
+
+/*h1 {
     background-color: #4CAF50; /* Green background */
-    color: white; /* Text color */
-    padding: 20px; /* Space inside the h1 */
-    text-align: center; /* Center the text */
+ /*   color: white; /* Text color */
+   /* padding: 20px; /* Space inside the h1 */
+  /*  text-align: center; /* Center the text */
    /* border-radius:0px; */ /* Rounded corners */
-    margin: 0; /* Remove default margin */
-    width:100%; /*Making the heading cover full width*/
+   /* margin: 0; /* Remove default margin */
+   /* width:100%; /*Making the heading cover full width*/
+  /*} */ 
+  main {
+    padding: 20px; /* Padding inside main */
+    background-color: #f9f9f9; /* Light background color for main section */
 }
+
+/*  styles for input fields and buttons */
+input[type='text'], input[type='number'] {
+    padding: 10px; /* Padding inside input fields */
+    margin-right: 10px; /* Space between inputs */
+}
+ 
 h2,h3{
 font-size: 24px; /* Increase font size */
 color: #333; /* Dark gray color */
