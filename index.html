@@ -17,8 +17,10 @@
             padding: 20px; /* Space inside the h1 */
             text-align: center; /* Center the text */
             border-radius:10px; /* Rounded corners */
+            margin: 0; /* Remove default margin */
+            width: 100%; /*Making the haeding cover full width*/
         }
-        h2 {
+        h2,h3{
         font-size: 24px; /* Increase font size */
         color: #333; /* Dark gray color */
         margin-top: 20px; /* Space above the heading */
@@ -27,6 +29,7 @@
         border-bottom: 2px solid #ccc; /* Add a bottom border */
         padding-bottom: 5px; /* Add some padding below the text */
     }
+      
         #shopping-list {
             list-style-type: none;
             padding: 0;
@@ -63,6 +66,19 @@
             display: flex; /* Use flexbox for each item container */
             align-items: center; /* Center items vertically */
             margin-bottom: 10px; /* Space between item containers */
+        }
+
+        footer {
+            text-align: center; /* Center the text */
+            margin-top: 20px; /* Space above the footer */
+            padding: 10px; /* Padding inside the footer */
+            background-color: #f1f1f1; /* Light gray background */
+            border-top: 1px solid #ccc; /* Top border */
+        }
+        
+        .copyright {
+            font-size: 14px; /* Font size for copyright text */
+            color: #333; /* Dark gray color */
         }
     </style>
 </head>
@@ -151,16 +167,31 @@
 
 
     <!-- Section to display selected items -->
-     <!--<div id="selected-items-section">
+    
+     <div>
         <h3>Selected Items:</h3>
-        <ul id="selected-items-list"></ul>
-    </div>  -->
+    </div> 
 
     <!-- List container to display items -->
     <ul id="shopping-list"></ul>
 
+
+    <!-- Footer with copyright notice -->
+    <footer>
+        <p id="copyright" class="copyright"></p>
+    </footer>
+
     <!-- Link to JavaScript file -->
     <script src="script.js"></script>
+
+     <!-- JavaScript for dynamic copyright year -->
+     <script>
+        window.addEventListener('load', function() {
+            const copyrightEl = document.getElementById('copyright');
+            const currentYear = new Date().getFullYear(); // Get the current year
+            copyrightEl.innerHTML = `&copy; ${currentYear} by Faith Chepkemoi. All rights reserved.`; // Set the copyright text
+        });
+     </script>
 
 </body>
 </html>
