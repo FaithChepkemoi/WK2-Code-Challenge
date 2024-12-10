@@ -28,7 +28,7 @@ function renderList() {
         
         // Display item name and quantity
         li.textContent = `${item.name} (Qty: ${item.quantity})`;
-        li.className = item.purchased ? 'purchased' : '';
+        li.className = item.purchased ? 'purchased' : ''; // Apply 'purchased' class if item is purchased
         
         // Create Edit button
         const editButton = document.createElement('button');
@@ -65,6 +65,20 @@ function addItem() {
     }
 }
 
+// Mark all items as purchased
+function markAllPurchased() {
+    items.forEach(item => item.purchased = true); // Set all items to purchased
+    renderList(); // Re-render the list to reflect changes visually
+    saveItems(); // Save to local storage
+}
+
+// Clear all items from the list and local storage
+function clearList() {
+    items = []; // Clear the items array
+    renderList(); // Re-render the list to show it is empty
+    localStorage.removeItem('shoppingList'); // Clear from local storage
+}
+
 // Edit an existing item including its quantity
 function editItem(index) {
     const newName = prompt("Edit item name:", items[index].name);
@@ -82,19 +96,15 @@ function editItem(index) {
     }
 }
 
-// Mark item as purchased
-function markPurchased(index) {
-   items[index].purchased = !items[index].purchased; // Toggle purchased state
-   renderList();
-   saveItems(); // Save to local storage
+// Save items to local storage 
+function saveItems() {
+   localStorage.setItem('shoppingList', JSON.stringify(items));
 }
-
-// Other functions remain unchanged...
 
 // Event listeners 
 addButton.addEventListener('click', addItem);
-markPurchasedButton.addEventListener('click', markAllPurchased);
-clearButton.addEventListener('click', clearList);
+markPurchasedButton.addEventListener('click', markAllPurchased); // Ensure this works correctly
+clearButton.addEventListener('click', clearList); // Ensure this works correctly
 
 // Load initial items from local storage when the page loads 
 loadItems();

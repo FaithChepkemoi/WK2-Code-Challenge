@@ -82,6 +82,7 @@ padding-bottom: 5px; /* Add some padding below the text */
     text-decoration: line-through; /* Strikethrough for purchased items */
     background-color: #d3ffd3; /* Light green background for purchased items */
 }
+
 button {
     margin-top: 10px;
 }
