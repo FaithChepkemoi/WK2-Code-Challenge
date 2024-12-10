@@ -49,6 +49,21 @@
             cursor: pointer; /* Change cursor to pointer on hover */
             margin-left: 5px; /* Space between image and icon */
         }
+        .item-selection {
+            display: flex; /* Use flexbox to arrange items in a column */
+            flex-direction: column; /* Arrange items vertically */
+            align-items: flex-start; /* Align items to the start of the container */
+            margin-top: 20px; /* Space above the item selection section */
+            border: 1px solid #ccc; /* Border around the selection area */
+            padding: 10px; /* Padding inside the selection area */
+            border-radius: 8px; /* Rounded corners */
+            background-color: #f9f9f9; /* Light background color */
+        }
+        .item-container {
+            display: flex; /* Use flexbox for each item container */
+            align-items: center; /* Center items vertically */
+            margin-bottom: 10px; /* Space between item containers */
+        }
     </style>
 </head>
 <body>
@@ -132,6 +147,13 @@
             <div style="display: inline-block;">
             <img src="images/minus.png" alt="Remove corriander" class="icon" data-item-name="corriander" onclick="removeItemFromImage('corriander')">
         </div>
+    </div>
+
+
+    <!-- Section to display selected items -->
+    <div id="selected-items-section">
+        <h3>Selected Items:</h3>
+        <ul id="selected-items-list"></ul>
     </div>
 
     <!-- List container to display items -->
