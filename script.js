@@ -1,6 +1,5 @@
 // Get references to DOM elements
 const itemInput = document.getElementById('item-input');
-const quantityInput = document.getElementById('quantity-input'); // Reference for quantity input
 const addButton = document.getElementById('add-button');
 const markPurchasedButton = document.getElementById('mark-purchased-button');
 const clearButton = document.getElementById('clear-button');
@@ -25,9 +24,7 @@ function renderList() {
     shoppingList.innerHTML = ''; // Clear existing list
     items.forEach((item, index) => {
         const li = document.createElement('li');
-        
-        // Display item name and quantity
-        li.textContent = `${item.name} (Qty: ${item.quantity})`;
+        li.textContent = item.name;
         li.className = item.purchased ? 'purchased' : '';
         
         // Add event listener for marking as purchased on click
@@ -50,28 +47,24 @@ function renderSelectedItems() {
     });
 }
 
-// Add item from input field with quantity
+// Add item from input field
 function addItem() {
     const itemName = itemInput.value.trim();
-    const quantity = parseInt(quantityInput.value) || 1; // Default to 1 if no valid quantity is provided
-
     if (itemName) {
-        items.push({ name: itemName, quantity, purchased: false });
+        items.push({ name: itemName, purchased: false });
         itemInput.value = ''; // Clear input field
-        quantityInput.value = '1'; // Reset quantity input to default value
         renderList();
         saveItems(); // Save to local storage
     }
 }
 
-// Add item from image selection with default quantity of 1
+// Add item from image selection
 function addItemFromImage(itemName) {
     if (itemName) {
         const existingItem = items.find(item => item.name === itemName);
         
         if (!existingItem) {
-            const quantity = parseInt(quantityInput.value) || 1;
-            items.push({ name: itemName, quantity, purchased: false });
+            items.push({ name: itemName, purchased: false });
             selectedItems.push(itemName); // Add to selected items
             renderList();
             renderSelectedItems(); // Update selected items display
@@ -99,42 +92,36 @@ function removeItemFromImage(itemName) {
         }
         
     } else {
-      alert(`${itemName} is not in the list.`);
-   }
+        alert(`${itemName} is not in the list.`);
+    }
 }
 
 // Mark item as purchased
 function markPurchased(index) {
-   items[index].purchased = !items[index].purchased; // Toggle purchased state
-   renderList();
-   saveItems(); // Save to local storage
+    items[index].purchased = !items[index].purchased; // Toggle purchased state
+    renderList();
+    saveItems(); // Save to local storage
 }
 
-// Edit an existing item including its quantity
+// Edit an existing item
 function editItem(index) {
-   const newName = prompt("Edit item:", items[index].name);
-   const newQuantityString = prompt("Edit quantity:", items[index].quantity);
-   const newQuantity = parseInt(newQuantityString);
-
-   if (newName !== null && newName.trim() !== "" && !isNaN(newQuantity) && newQuantity > 0) { 
-       const oldName = items[index].name;
-       
-       const selectedIndex = selectedItems.indexOf(oldName);
-       
-       if (selectedIndex !== -1) {
-           selectedItems[selectedIndex] = newName.trim();
-           renderSelectedItems(); // Update displayed selected items.
-           
+    const newName = prompt("Edit item:", items[index].name);
+    if (newName !== null && newName.trim() !== "") {
+        const oldName = items[index].name;
+        
+        const selectedIndex = selectedItems.indexOf(oldName);
+        
+        if (selectedIndex !== -1) {
+            selectedItems[selectedIndex] = newName.trim();
+            renderSelectedItems(); // Update displayed selected items.
+            
            // Also update the main shopping list.
            items[index].name = newName.trim();
-           items[index].quantity = newQuantity;
            renderList();
            saveItems(); // Save to local storage.
        } else { 
            alert("This item is not in your selections.");
        }
-   } else { 
-       alert("Invalid input. Please provide a valid name and quantity.");
    }
 }
 
