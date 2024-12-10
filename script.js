@@ -32,6 +32,7 @@ function renderList() {
         // Create Edit button
         const editButton = document.createElement('button');
         editButton.textContent = 'Edit';
+        editButton.className = 'edit-button'; // Optional class for styling
         
         // Add event listener for editing
         editButton.addEventListener('click', (event) => {
@@ -106,37 +107,32 @@ function saveItems() {
    localStorage.setItem('shoppingList', JSON.stringify(items));
 }
 
-// Function to increase quantity of an item when plus icon is clicked 
-function increaseQuantity(itemName) {
-   const quantityElement = document.getElementById(`${itemName}-quantity`);
-   let currentQuantity = parseInt(quantityElement.textContent);
-   currentQuantity += 1; 
-   quantityElement.textContent = currentQuantity;
-
-   const existingItemIndex = items.findIndex(item => item.name === itemName);
-   if (existingItemIndex !== -1) {
-       items[existingItemIndex].quantity = currentQuantity;
-       saveItems();
-   }
+// Function to add item from image selection with default quantity of 1
+function addItemFromImage(itemName) {
+    const existingItemIndex = items.findIndex(item => item.name === itemName);
+    
+    if (existingItemIndex === -1) {
+        const quantity = parseInt(quantityInput.value) || 1; // Use quantity input value or default to 1
+        items.push({ name: itemName, quantity, purchased: false });
+        
+        renderList(); // Update the list display
+        saveItems(); // Save to local storage
+    } else {
+        alert(`${itemName} is already in the list.`);
+    }
 }
 
-// Function to decrease quantity of an item when minus icon is clicked 
-function decreaseQuantity(itemName) {
-   const quantityElement = document.getElementById(`${itemName}-quantity`);
-   let currentQuantity = parseInt(quantityElement.textContent);
-   
-   if (currentQuantity > 1) { 
-       currentQuantity -= 1; 
-       quantityElement.textContent = currentQuantity;
-
-       const existingItemIndex = items.findIndex(item => item.name === itemName);
-       if (existingItemIndex !== -1) {
-           items[existingItemIndex].quantity = currentQuantity;
-           saveItems();
-       }
-   } else {
-       alert("Quantity cannot be less than 1.");
-   }
+// Function to remove item from image selection
+function removeItemFromImage(itemName) {
+    const indexToRemove = items.findIndex(item => item.name === itemName);
+    
+    if (indexToRemove !== -1) {
+        items.splice(indexToRemove, 1); // Remove the item from the array
+        renderList(); // Update the display after removal
+        saveItems(); // Save changes to local storage
+    } else {
+        alert(`${itemName} is not in the list.`);
+    }
 }
 
 // Event listeners 
