@@ -39,7 +39,30 @@ input[type='text'], input[type='number'] {
     padding: 10px; /* Padding inside input fields */
     margin-right: 10px; /* Space between inputs */
 }
+
+button {
+    padding: 10px 15px; /* Padding inside buttons */
+    background-color: #3498db; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners for buttons */
+}
+
+button:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+}
+
+.item-selection {
+    display: flex;
+    flex-direction: column;
+}
  
+/* styles.css */
+.purchased {
+    text-decoration: line-through; /* Strikethrough for purchased items */
+    background-color: #d3ffd3; /* Light green background for purchased items */
+    color: #555; /* Darker text color for better contrast */
+}
 h2,h3{
 font-size: 24px; /* Increase font size */
 color: #333; /* Dark gray color */
