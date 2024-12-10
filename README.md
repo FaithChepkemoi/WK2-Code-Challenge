@@ -38,3 +38,9 @@ Click the "Edit" button next to an item to change its name or quantity.
 
 **Clearing the List**:
 Click the "Clear List" button to remove all items from your shopping list.
+
+## License
+This project is licensed under the MIT License.
+
+## Contributing
+Contributions are welcome! Please feel free to submit a pull request or open an issue if you have suggestions or improvements.
