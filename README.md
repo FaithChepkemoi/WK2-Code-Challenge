@@ -15,7 +15,7 @@ The Shopping List Application is a simple web-based tool that allows users to ma
 
 ## Installation
 
-1. **Clone the repository**:
+1. **Fork and Clone the repository**:
    ```bash
    git clone git@github.com:FaithChepkemoi/WK2-Code-Challenge.git
 
@@ -44,3 +44,11 @@ This project is licensed under the MIT License.
 
 ## Contributing
 Contributions are welcome! Please feel free to submit a pull request or open an issue if you have suggestions or improvements.
+
+## Contact
+
+Name : Faith Chepkemoi
+
+Email. faithhope017@gmail.com
+
+Project Link : https://github.com/FaithChepkemoi/WK2-Code-Challenge
